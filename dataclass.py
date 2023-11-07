@@ -24,7 +24,7 @@ class ChinesePretrainCorpus:
         self.bsz_per_gpu, self.num_of_gpu = bsz_per_gpu, num_of_gpu
         self.bsz_one_step = self.bsz_per_gpu * self.num_of_gpu
         self.epoch_id = 0
-        self.eos_token = self.tokenizer.pad_token
+        self.eos_token = self.tokenizer.sep_token
         self.seqlen = seqlen
         self.block_size = self.seqlen + 1 # input: [:-1]; label:[1:]
         print ('Loading dev data...')
